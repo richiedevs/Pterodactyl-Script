@@ -1439,15 +1439,15 @@ install_wings() {
         yum -y install curl tar unzip
     fi
 
-    output "Installing Docker"
-    curl -sSL https://get.docker.com/ | CHANNEL=stable bash
+    # output "Installing Docker"
+    # curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 
-    service docker start
-    systemctl enable docker
+    # service docker start
+    # systemctl enable docker
     output "Enabling SWAP support for Docker."
     sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="[^"]*/& swapaccount=1/' /etc/default/grub
     output "Installing the Pterodactyl wings..."
-    mkdir -p /etc/pterodactyl /srv/daemon-data
+    # mkdir -p /etc/pterodactyl /srv/daemon-data
     cd /etc/pterodactyl
     curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_amd64
     chmod u+x /usr/local/bin/wings
