@@ -1616,7 +1616,7 @@ install_standalone_sftp(){
     fi
     service wings restart
     output "Installing standalone SFTP server..."
-    curl -Lo sftp-server https://github.com/pterodactyl/sftp-server/releases/f1.0.5/sftp-server
+    curl -Lo sftp-server https://github.com/pterodactyl/sftp-server/releases/v1.0.5/sftp-server
     chmod +x sftp-server
     bash -c 'cat > /etc/systemd/system/pterosftp.service' <<-'EOF'
 [Unit]
